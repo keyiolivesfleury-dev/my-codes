@@ -1,2 +1,2 @@
 # my-codes
-as i study programming i'll be writing some codes.
+as i'm study programming i'll be writing some python codes by my own with the knowledge that i'll be gaining.
