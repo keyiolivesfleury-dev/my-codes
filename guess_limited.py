@@ -1,4 +1,4 @@
-""" this game is a bit different from the others because it gives a user a specfic attempts numbers and count them the scores.
+""" this game is a bit different from the others because it gives a user a specfic attempts limit and count for them the scores.
 """
 
 import random
@@ -30,10 +30,23 @@ def game(name):# i was not sure that this argparse is going to work twice! but i
                    
                     if attempts >= 4: # if from the first line.
                         print(f"you've lost. \nno attempts left.\n\n my number was: {computer} \nyou tried: {attempts} times\nscores: {scores}")
+                        playagain = input(f"enter y for yes \n or n for no. \n")
+                        if playagain not in ("y,n"):
+                            print(f"{name} please choose between y and n!")
+                        elif  playagain == "y":
+                            print(f"\nokay {name} let's continue")
+                            #return limits(name)# this is not working because it is   counting the last game attempts.
+                            return game(name) # this let the playagain count separately with the last game.
+                        elif playagain == "n":
+                            print(f"{name} it was a pleasure to play with you! \n good_bye👋👋👋")
+                            break
                         return game(name)
                     print("please try again.")
                     # break # this was not employing the playagain
-                    return limits(name)
+                    
+                    # return limits(name) this was causing the attempts to change the secret number on the go!
+                    continue # this fix the problem and computer keep the same number untill the user reach the attempts limits.
+               
                
                 elif user == computer: # it is still jumping some numbers that are equal to it! why?
                     
