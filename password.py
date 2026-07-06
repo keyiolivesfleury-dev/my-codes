@@ -35,10 +35,7 @@ def password():
       except ValueError:
         print("\nno letters are allowed, only numbers are allowed\n")
         continue
-  
-
-        
-
+          
 password()
 
 
